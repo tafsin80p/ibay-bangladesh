@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import { CATEGORIES, ProductCategory } from '@/types/product';
+import { Layers } from 'lucide-react';
 
 interface CategoryTabsProps {
   selectedCategory: ProductCategory | 'all';
@@ -20,24 +21,27 @@ export function CategoryTabs({ selectedCategory, onCategoryChange }: CategoryTab
                 : 'bg-secondary text-secondary-foreground hover:bg-accent'
             )}
           >
-            <span>🍎</span>
+            <Layers className="h-4 w-4" />
             All Products
           </button>
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => onCategoryChange(cat.id)}
-              className={cn(
-                'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap',
-                selectedCategory === cat.id
-                  ? 'bg-primary text-primary-foreground shadow-md'
-                  : 'bg-secondary text-secondary-foreground hover:bg-accent'
-              )}
-            >
-              <span>{cat.icon}</span>
-              {cat.label}
-            </button>
-          ))}
+          {CATEGORIES.map((cat) => {
+            const IconComponent = cat.icon;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => onCategoryChange(cat.id)}
+                className={cn(
+                  'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap',
+                  selectedCategory === cat.id
+                    ? 'bg-primary text-primary-foreground shadow-md'
+                    : 'bg-secondary text-secondary-foreground hover:bg-accent'
+                )}
+              >
+                <IconComponent className="h-4 w-4" />
+                {cat.label}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

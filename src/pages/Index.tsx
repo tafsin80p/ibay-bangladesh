@@ -5,6 +5,7 @@ import { ProductGrid } from '@/components/ProductGrid';
 import { ProductDetail } from '@/components/ProductDetail';
 import { AddPostModal } from '@/components/AddPostModal';
 import { LocationBanner } from '@/components/LocationBanner';
+import { AppleLogo } from '@/components/icons/AppleLogo';
 import { useLocation } from '@/hooks/useLocation';
 import { mockProducts } from '@/data/mockProducts';
 import { Product, ProductCategory, DIVISIONS } from '@/types/product';
@@ -102,7 +103,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm"></span>
+              <AppleLogo className="h-4 w-4 text-primary-foreground" />
             </div>
             <span className="font-bold text-lg text-foreground">iBuySell</span>
           </div>

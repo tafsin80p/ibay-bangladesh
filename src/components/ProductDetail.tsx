@@ -44,6 +44,7 @@ export function ProductDetail({ product, open, onClose }: ProductDetailProps) {
   }).format(product.price);
 
   const category = CATEGORIES.find((c) => c.id === product.category);
+  const CategoryIcon = category?.icon;
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -91,7 +92,8 @@ export function ProductDetail({ product, open, onClose }: ProductDetailProps) {
             <DialogHeader className="mb-4">
               <div className="flex items-center gap-2 mb-2">
                 <Badge variant="secondary" className="gap-1">
-                  {category?.icon} {category?.label}
+                  {CategoryIcon && <CategoryIcon className="h-3 w-3" />}
+                  {category?.label}
                 </Badge>
                 <Badge className={conditionColors[product.condition]}>
                   {conditionLabels[product.condition]}
