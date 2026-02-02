@@ -1,3 +1,5 @@
+import { Smartphone, Tablet, Laptop, Watch, Headphones, Cable, LucideIcon, Apple } from 'lucide-react';
+
 export type ProductCategory = 'iphone' | 'ipad' | 'macbook' | 'watch' | 'airpods' | 'accessories';
 
 export type ProductCondition = 'new' | 'like-new' | 'good' | 'fair';
@@ -35,11 +37,11 @@ export const DIVISIONS: Division[] = [
   { id: 'mymensingh', name: 'Mymensingh', nameBn: 'ময়মনসিংহ' },
 ];
 
-export const CATEGORIES: { id: ProductCategory; label: string; icon: string }[] = [
-  { id: 'iphone', label: 'iPhone', icon: '📱' },
-  { id: 'ipad', label: 'iPad', icon: '📲' },
-  { id: 'macbook', label: 'MacBook', icon: '💻' },
-  { id: 'watch', label: 'Apple Watch', icon: '⌚' },
-  { id: 'airpods', label: 'AirPods', icon: '🎧' },
-  { id: 'accessories', label: 'Accessories', icon: '🔌' },
+export const CATEGORIES: { id: ProductCategory; label: string; icon: LucideIcon }[] = [
+  { id: 'iphone', label: 'iPhone', icon: Smartphone },
+  { id: 'ipad', label: 'iPad', icon: Tablet },
+  { id: 'macbook', label: 'MacBook', icon: Laptop },
+  { id: 'watch', label: 'Apple Watch', icon: Watch },
+  { id: 'airpods', label: 'AirPods', icon: Headphones },
+  { id: 'accessories', label: 'Accessories', icon: Cable },
 ];
